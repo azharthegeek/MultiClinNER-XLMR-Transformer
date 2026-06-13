@@ -1,0 +1,212 @@
+
+Device  : cuda
+Labels  : ['O', 'B-DIS', 'I-DIS', 'B-SYM', 'I-SYM', 'B-PRO', 'I-PRO']
+Model   : /content/MultiClinNER-XLMR/outputs/checkpoints/best_model
+
+Model loaded  : best_model
+Parameters    : 277.5M
+Labels (head) : {0: 'O', 1: 'B-DIS', 2: 'I-DIS', 3: 'B-SYM', 4: 'I-SYM', 5: 'B-PRO', 6: 'I-PRO'}
+
+The patient presente d with severe che st pain[I-SYM] and dys[B-SYM] pne[I-SYM] a[I-SYM] and was diagnose d with heart[B-DIS] failure[I-DIS] .
+
+Detected Entities:
+  - dys pne a (SYM)
+  - heart failure (DIS)
+
+  El paciente present ó fie[B-SYM] bre[I-SYM] alta[I-SYM] , to[B-SYM] s se[I-SYM] ca[I-SYM] y fue diagnostic ado con neu[B-DIS] mon ía[I-DIS] bacteria[I-DIS] na[I-DIS] .
+
+Detected Entities:
+  - fie bre alta (SYM)
+  - to (SYM)
+  - neu (DIS)
+
+
+  She was diagnose d with type[B-DIS] 2[I-DIS] diabetes[I-DIS] mell[I-DIS] itus[I-DIS] and hyper[B-DIS] tension[I-DIS] .
+
+Detected Entities:
+  - type 2 diabetes mell itus (DIS)
+  - hyper tension (DIS)
+
+The bio[B-PRO] psy confirm ed colore[B-DIS] c tal cancer[I-DIS] stage III .
+
+Detected Entities:
+  - bio (PRO)
+  - colore (DIS)
+
+M[B-PRO] RI reveal ed a les[B-DIS] ion consistent with multiple sc[I-DIS] ler[I-DIS] osis[I-DIS] .
+
+Detected Entities:
+  - M (PRO)
+  - les (DIS)
+
+The child had high[B-SYM] fe[I-SYM] ver[I-SYM] , persist ent co ugh[I-SYM] , and ne[B-SYM] ck sti[I-SYM] ff[I-SYM] ness[I-SYM] .
+
+Detected Entities:
+  - high fe ver (SYM)
+  - ne (SYM)
+
+He reported sharp epi gas[I-SYM] tric[I-SYM] pain[I-SYM] , na[B-SYM] use a[I-SYM] , and vom[B-SYM] i[I-SYM] ting[I-SYM] for two days .
+
+Detected Entities:
+  - na (SYM)
+  - vom i ting (SYM)
+
+The patient under went corona[B-PRO] ry arter[I-PRO] y[I-PRO] by[I-PRO] pass[I-PRO] graf[I-PRO] ting after a[B-DIS] cute[B-DIS] my[I-DIS] o card[I-DIS] ial[I-DIS] in[I-DIS] far[I-DIS] ction[I-DIS] .
+
+Detected Entities:
+  - corona (PRO)
+  - a (DIS)
+  - cute my (DIS)
+
+Blood[B-PRO] culture[I-PRO] s were draw n and intra[B-PRO] ven ous[I-PRO] antibiotic[I-PRO] s[I-PRO] were ad minister ed .
+
+Detected Entities:
+  - Blood culture (PRO)
+  - intra (PRO)
+
+E[B-PRO] cho[B-PRO] card i ogram reveal ed mit[B-DIS] ral val[I-DIS] ve[I-DIS] re[I-DIS] gur[I-DIS] gi[I-DIS] tation[I-DIS] and the patient complain ed of short[B-SYM] ness[I-SYM] of[I-SYM] breath[I-SYM] .
+
+Detected Entities:
+  - E (PRO)
+  - cho (PRO)
+  - mit (DIS)
+  - short ness of breath (SYM)
+
+He has chronic[B-DIS] ob[I-DIS] struct[I-DIS] ive[I-DIS] pulmonar[I-DIS] y[I-DIS] disease[I-DIS] and requires bron[B-PRO] chod il[I-PRO] ator therapy twice daily .
+
+Detected Entities:
+  - chronic ob struct ive pulmonar y disease (DIS)
+  - bron (PRO)
+
+After app[B-PRO] ende cto my the patient developed wo[B-DIS] und infection[I-DIS] and se[B-DIS] psis[I-DIS] .
+
+Detected Entities:
+  - app (PRO)
+  - wo (DIS)
+  - se psis (DIS)
+
+  El paciente present ó fie[B-SYM] bre[I-SYM] alta[I-SYM] y to[B-SYM] s se[I-SYM] ca[I-SYM] durante tres días .
+
+Detected Entities:
+  - fie bre alta (SYM)
+  - to (SYM)
+
+Se le diagnostic ó diabetes[B-DIS] mell[I-DIS] itus[I-DIS] tipo[I-DIS] 2[I-DIS] e hipertensi[B-DIS] ón arterial[I-DIS] .
+
+Detected Entities:
+  - diabetes mell itus tipo 2 (DIS)
+  - hipertensi (DIS)
+
+La paciente fue some tida a una a[B-PRO] pendi ce c tom ía de urge ncia por per[B-DIS] i ton[I-DIS] itis[I-DIS] .
+
+Detected Entities:
+  - a (PRO)
+  - per (DIS)
+
+Presenta ce[B-SYM] fa lea[I-SYM] intensa[I-SYM] , ná[B-SYM] use as[I-SYM] y rigid[B-SYM] ez[I-SYM] de[I-SYM] nu[I-SYM] ca[I-SYM] sugesti va de mening[B-DIS] itis[I-DIS] .
+
+Detected Entities:
+  - ce (SYM)
+  - ná (SYM)
+  - rigid ez de nu ca (SYM)
+  - mening itis (DIS)
+
+Se ini ció tratamiento con anti[B-PRO] bi ó ticos por neu[B-DIS] mon[I-DIS] ía[I-DIS] bacteria[I-DIS] na[I-DIS] y el paciente mejor ó .
+
+Detected Entities:
+  - anti (PRO)
+  - neu mon ía bacteria na (DIS)
+
+La res[B-PRO] on ancia mag[I-PRO] n[I-PRO] ética[I-PRO] most ró una le[B-DIS] sión hiper[I-DIS] inten[I-DIS] sa[I-DIS] compatible con [B-DIS] esc[B-DIS] ler[I-DIS] osis[I-DIS] múlt[I-DIS] i[I-DIS] ple[I-DIS] .
+
+Detected Entities:
+  - res (PRO)
+  - le (DIS)
+  -  (DIS)
+  - esc ler osis múlt i ple (DIS)
+
+El niño tenía er[B-DIS] up ción[I-DIS] cu[I-DIS] tán[I-DIS] e[I-DIS] a[I-DIS] e inflama[B-DIS] ción[I-DIS] articula[I-DIS] r[I-DIS] compatible con artrit[B-DIS] is[I-DIS] juvenil[I-DIS] .
+
+Detected Entities:
+  - er (DIS)
+  - inflama ción articula r (DIS)
+  - artrit is juvenil (DIS)
+
+  Patient has chronic[B-DIS] ki[I-DIS] dne[I-DIS] y[I-DIS] disease[I-DIS] and requires di[B-PRO] al ysis three times a week .
+
+Detected Entities:
+  - chronic ki dne y disease (DIS)
+  - di (PRO)
+
+  Sentence: The biopsy confirmed colorectal cancer and chemotherapy was initiated.
+ 	token	label	entity_type	bio_prefix
+0	The	O	O	
+1	bio	B-PRO	PRO	B
+2	psy	O	O	
+3	confirm	O	O	
+4	ed	O	O	
+5	colore	B-DIS	DIS	B
+6	c	O	O	
+7	tal	I-DIS	DIS	I
+8	cancer	I-DIS	DIS	I
+9	and	O	O	
+10	che	B-PRO	PRO	B
+11	mo	O	O	
+12	therapy	O	O	
+13	was	O	O	
+14	initiat	O	O	
+15	ed	O	O	
+16	.	O	O	
+
+Total spans extracted: 14
+Sentence	Entity Span	Type
+0	She was diagnosed with type 2 diabetes and hyp...	type 2 diabetes	DIS
+1	She was diagnosed with type 2 diabetes and hyp...	hyper tension	DIS
+2	She was diagnosed with type 2 diabetes and hyp...	blu	DIS
+3	The patient underwent MRI and was found to hav...	her	DIS
+4	The patient underwent MRI and was found to hav...	back pain	SYM
+5	He had fever and chills and was started on bro...	fe	SYM
+6	He had fever and chills and was started on bro...	chill s	SYM
+7	He had fever and chills and was started on bro...	se psis	DIS
+8	Laparoscopic cholecystectomy was performed for...	La	PRO
+9	Laparoscopic cholecystectomy was performed for...	a	DIS
+10	Laparoscopic cholecystectomy was performed for...	cute cho le cy stiti s	DIS
+11	CT scan revealed pulmonary embolism and antico...	CT	PRO
+12	CT scan revealed pulmonary embolism and antico...	pulmonar	DIS
+13	CT scan revealed pulmonary embolism and antico...	antico	PRO
+
+
+ 
+>>> Abbreviations
+P t c / o  SOB and CP  , rule d out MI[B-DIS]  , started on hep arin d rip .
+Detected Entities:
+  - MI (DIS)
+
+>>> Negated entity (should NOT be flagged ideally)
+The patient de ni ed any che[B-SYM] st pain[I-SYM] or short[B-SYM] ness[I-SYM] of[I-SYM] breath[I-SYM] .
+Detected Entities:
+  - che (SYM)
+  - short ness of breath (SYM)
+
+>>> Long multi-word procedure
+She under went per[B-PRO] cuta ne ous trans[I-PRO] lumina[I-PRO] l[I-PRO] corona[I-PRO] ry[I-PRO] ang[I-PRO] io[I-PRO] plast[I-PRO] y[I-PRO] with sten ting[I-PRO] .
+Detected Entities:
+  - per (PRO)
+
+>>> Multiple entities back-to-back
+Fe ver head ache vom[B-DIS] i ting  rash[I-DIS] — suspect ed den[B-DIS] gue fe[I-DIS] ver[I-DIS] with  thro mbo cy[I-DIS] top[I-DIS] enia[I-DIS] .
+Detected Entities:
+  - vom (DIS)
+  - den (DIS)
+
+>>> Rare entity (OOV stress test)
+ Diagnos ed with Tak[B-DIS] aya su[I-DIS] arteri[I-DIS] tis[I-DIS] and started on immun[B-PRO] os up[I-PRO] press[I-PRO] ive [I-PRO] therapy .
+Detected Entities:
+  - Tak (DIS)
+  - immun (PRO)
+
+>>> Spanish-English code-switch
+El patient fue diagnose d con hyper[B-DIS] tension[I-DIS] y diabetes[B-DIS] .
+Detected Entities:
+  - hyper tension (DIS)
+  - diabetes (DIS)

@@ -1,0 +1,250 @@
+PyTorch    : 2.11.0+cu128
+CUDA       : True
+GPU        : Tesla T4
+VRAM       : 15.6 GB
+Model      : xlm-roberta-base
+Max length : 256
+Labels (7): ['O', 'B-DIS', 'I-DIS', 'B-SYM', 'I-SYM', 'B-PRO', 'I-PRO']
+EN train: 10000 sentences
+ES train: 10163 sentences
+
+EN sample:
+A 42-year-old woman consulted for a history of headache of 10 days' duration accompanied by gait instability. History of migraine, peripheral facial paralysis "a frigore" 20 years ago and episodes of depression. The neurological[B-PRO] examination[I-PRO] showed a right dysmetria and a positive Romberg's manoeuvre and sequelae of his facial paralysis. Cranial[B-PRO] CT[I-PRO] scan[I-PRO] showed an expansive process occupying the right posterior hemifosa. The lesion had a solid component that was enhanced by contrast material and a cystic component. Magnetic[B-PRO] resonance[I-PRO] imaging[I-PRO] of[I-PRO] the[I-PRO] brain[I-PRO] confirmed the findings of the CT[B-PRO] scan.[I-PRO] A lesion of about 4 cm in diameter was found with a solid and a cystic component, surrounded by oedema, located in the right cerebellar hemisphere. This mass was heterogeneous and hypointense in relation to the cerebellar tissue on T1 and hyperintense on T2. It was enhanced with Gadolinium.[B-PRO] It was not accompanied by hydrocephalus. 
+
+ES sample:
+JL, mujer blanca de 46 años de edad, consultó en febrero de 2000 por asimetría[B-SYM] facial[I-SYM] y dificultad[B-SYM] para[I-SYM] utilizar[I-SYM] su[I-SYM] prótesis[I-SYM] inferior.[I-SYM] Concurrió con un aumento[B-SYM] de[I-SYM] volumen[I-SYM] parasinfisario[I-SYM] izquierdo de 1 año de evolución, de crecimiento lento y que en los últimos meses se había estabilizado, y no recordaba antecedentes traumáticos en la zona. El examen bucal, reveló una paciente desdentada[B-SYM] completa[I-SYM] superior[I-SYM] e[I-SYM] inferior.[I-SYM] En la zona[B-SYM] anterior[I-SYM] izquierda[I-SYM] mandibular[I-SYM] se[I-SYM] apreció[I-SYM] una[I-SYM] masa[I-SYM] que expandía la cortical vestibular y lingual, cubierta por mucosa sana en la que se observaban telangectasias. A la palpación, los límites eran netos, había crepitación[B-SYM] de[I-SYM] la[I-SYM] cortical[I-SYM] vestibular[I-SYM] y perforación de la lingual. El examen neurológico objetivo y subjetivo, confirmó que no había compromiso[B-SYM] del[I-SYM] nervio[I-SYM] alveolar[I-SYM] inferior,[I-SYM] signo[B-SYM] de[I-SYM] Vincent[I-SYM] (-).[I-SYM] 
+Word                 Subwords
+------------------------------------------------------------
+hypertension         ['▁hyper', 'tension']
+dyspnea              ['▁dys', 'pne', 'a']
+laparoscopy          ['▁la', 'paro', 's', 'copy']
+pneumonia            ['▁pneu', 'monia']
+tachycardia          ['▁ta', 'chy', 'car', 'dia']
+Loading pre-built datasets from disk ...
+DatasetDict({
+    train: Dataset({
+        features: ['input_ids', 'attention_mask', 'labels'],
+        num_rows: 20163
+    })
+    validation: Dataset({
+        features: ['input_ids', 'attention_mask', 'labels'],
+        num_rows: 2315
+    })
+    test: Dataset({
+        features: ['input_ids', 'attention_mask', 'labels'],
+        num_rows: 2250
+    })
+})
+
+
+Joint train: 20163 sentences
+Subword token             Label
+----------------------------------------
+<s>                       (-100)
+▁A                        O
+▁42                       O
+-                         (-100)
+year                      (-100)
+-                         (-100)
+old                       (-100)
+▁woman                    O
+▁consulte                 O
+d                         (-100)
+▁for                      O
+▁a                        O
+▁history                  O
+▁of                       O
+▁head                     O
+ache                      (-100)
+▁of                       O
+▁10                       O
+▁days                     O
+'                         (-100)
+▁du                       O
+ration                    (-100)
+▁ac                       O
+com                       (-100)
+pani                      (-100)
+ed                        (-100)
+▁by                       O
+▁ga                       O
+it                        (-100)
+▁in                       O
+st                        (-100)
+ability                   (-100)
+.                         (-100)
+▁History                  O
+▁of                       O
+▁migra                    O
+ine                       (-100)
+,                         (-100)
+▁per                      O
+i                         (-100)
+pher                      (-100)
+al                        (-100)
+▁facial                   O
+▁para                     O
+lys                       (-100)
+is                        (-100)
+▁"                        O
+a                         (-100)
+▁frigo                    O
+re                        (-100)
+"                         (-100)
+▁20                       O
+▁years                    O
+▁ago                      O
+▁and                      O
+▁episode                  O
+s                         (-100)
+▁of                       O
+▁depression               O
+.                         (-100)
+▁The                      O
+▁neurologi                B-PRO ◄
+cal                       (-100)
+▁examina                  I-PRO ◄
+tion                      (-100)
+▁showed                   O
+▁a                        O
+▁right                    O
+▁dys                      O
+metri                     (-100)
+a                         (-100)
+▁and                      O
+▁a                        O
+▁positive                 O
+▁Rom                      O
+berg                      (-100)
+'                         (-100)
+s                         (-100)
+▁man                      O
+oeuvre                    (-100)
+▁and                      O
+▁se                       O
+que                       (-100)
+la                        (-100)
+e                         (-100)
+▁of                       O
+▁his                      O
+▁facial                   O
+▁para                     O
+lys                       (-100)
+is                        (-100)
+.                         (-100)
+▁Cra                      B-PRO ◄
+ni                        (-100)
+al                        (-100)
+▁CT                       I-PRO ◄
+▁scan                     I-PRO ◄
+▁showed                   O
+▁an                       O
+▁exp                      O
+an                        (-100)
+sive                      (-100)
+▁process                  O
+▁o                        O
+ccup                      (-100)
+ying                      (-100)
+▁the                      O
+▁right                    O
+▁posterior                O
+▁hem                      O
+if                        (-100)
+osa                       (-100)
+.                         (-100)
+▁The                      O
+▁les                      O
+ion                       (-100)
+▁had                      O
+▁a                        O
+▁solid                    O
+▁component                O
+▁that                     O
+▁was                      O
+▁enhance                  O
+d                         (-100)
+▁by                       O
+▁contrast                 O
+▁material                 O
+</s>                      (-100)
+XLMRobertaForTokenClassification LOAD REPORT from: xlm-roberta-base
+
+Key                         | Status     | 
+----------------------------+------------+-
+lm_head.bias                | UNEXPECTED | 
+lm_head.layer_norm.weight   | UNEXPECTED | 
+lm_head.layer_norm.bias     | UNEXPECTED | 
+lm_head.dense.weight        | UNEXPECTED | 
+roberta.pooler.dense.weight | UNEXPECTED | 
+lm_head.dense.bias          | UNEXPECTED | 
+roberta.pooler.dense.bias   | UNEXPECTED | 
+classifier.bias             | MISSING    | 
+classifier.weight           | MISSING    | 
+
+Notes:
+- UNEXPECTED	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+Parameters : 277,458,439 total  |  277,458,439 trainable
+warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.
+`logging_dir` is deprecated and will be removed in v5.2. Please set `TENSORBOARD_LOGGING_DIR` instead.
+
+Class weights (capped at 10.0× min):
+  O        0.163
+  B-DIS    1.630
+  I-DIS    1.630
+  B-SYM    1.630
+  I-SYM    1.630
+  B-PRO    1.630
+  I-PRO    1.630
+
+
+Steps per epoch : ~2520
+Max epochs      : 10 (early stopping patience=3)
+Mixed precision : True
+Starting training ... (this takes several minutes on GPU, hours on CPU)
+LLRD: classifier lr=1.00e-05, top encoder lr=9.50e-06, embeddings lr=5.13e-06
+ [10088/12610 1:02:21 < 15:35, 2.70 it/s, Epoch 8/10]
+Epoch	Training Loss	Validation Loss	Precision	Recall	Overall F1	Dis F1	Sym F1	Pro F1
+1	0.308356	0.133359	0.150012	0.586480	0.238913	0.293604	0.202591	0.234955
+2	0.243832	0.114283	0.172773	0.651501	0.273117	0.311039	0.254866	0.253044
+3	0.193724	0.108373	0.182425	0.669552	0.286728	0.309348	0.274975	0.273806
+4	0.178659	0.106602	0.190373	0.681894	0.297648	0.335818	0.280547	0.277020
+5	0.164976	0.108848	0.197282	0.692577	0.307089	0.344451	0.293413	0.282048
+6	0.154600	0.113689	0.194170	0.699392	0.303955	0.337002	0.287363	0.286181
+7	0.126864	0.116865	0.196106	0.695708	0.305966	0.340694	0.292793	0.284109
+8	0.135965	0.118637	0.196233	0.702339	0.306758	0.343518	0.292734	0.284138
+
+
+Best dev F1 : 0.3071  (epoch 5)
+Evaluating on EN test set ...
+
+=== English Test Results ===
+              precision    recall  f1-score   support
+
+         DIS       0.25      0.68      0.36      2204
+         PRO       0.18      0.68      0.29      1620
+         SYM       0.18      0.69      0.28      1789
+
+   micro avg       0.20      0.68      0.31      5613
+   macro avg       0.20      0.68      0.31      5613
+weighted avg       0.21      0.68      0.31      5613
+
+Overall F1 (EN): 0.3106
+Evaluating on ES test set ...
+
+=== Spanish Test Results ===
+              precision    recall  f1-score   support
+
+         DIS       0.22      0.71      0.34      1837
+         PRO       0.23      0.70      0.35      1872
+         SYM       0.18      0.70      0.28      1655
+
+   micro avg       0.21      0.71      0.32      5364
+   macro avg       0.21      0.71      0.32      5364
+weighted avg       0.21      0.71      0.32      5364
+
+Overall F1 (ES): 0.3213
+Model comparison (fill mBERT rows after running baseline):
+Skip: mBERT checkpoint not found at /content/MultiClinNER-XLMR/outputs/checkpoints/mbert_best
+Run: python src/train.py --model-name bert-base-multilingual-cased

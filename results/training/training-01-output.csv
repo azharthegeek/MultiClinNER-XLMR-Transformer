@@ -1,0 +1,212 @@
+#Cell 01
+
+PyTorch  : 2.11.0+cu128
+CUDA     : True
+GPU      : Tesla T4
+VRAM     : 15.6 GB
+
+# Cell 02
+ Dataset loaded:
+DatasetDict({
+    train: Dataset({
+        features: ['input_ids', 'attention_mask', 'labels'],
+        num_rows: 20163
+    })
+    validation: Dataset({
+        features: ['input_ids', 'attention_mask', 'labels'],
+        num_rows: 2315
+    })
+    test: Dataset({
+        features: ['input_ids', 'attention_mask', 'labels'],
+        num_rows: 2250
+    })
+})
+
+Train size : 20163 sentences
+Dev size   : 2315 sentences
+model.safetensors: 100% 1.12G/1.12G [00:09<00:00, 156MB/s]Loading weights: 100% 197/197 [00:00<00:00, 254.59it/s, Materializing param=roberta.encoder.layer.11.output.dense.weight]XLMRobertaForTokenClassification LOAD REPORT from: xlm-roberta-base
+Key                         | Status     | 
+----------------------------+------------+-
+lm_head.bias                | UNEXPECTED | 
+lm_head.layer_norm.weight   | UNEXPECTED | 
+roberta.pooler.dense.bias   | UNEXPECTED | 
+roberta.pooler.dense.weight | UNEXPECTED | 
+lm_head.layer_norm.bias     | UNEXPECTED | 
+lm_head.dense.bias          | UNEXPECTED | 
+lm_head.dense.weight        | UNEXPECTED | 
+classifier.bias             | MISSING    | 
+classifier.weight           | MISSING    | 
+
+Notes:
+- UNEXPECTED	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING	:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+
+Model      : xlm-roberta-base
+Parameters : 277,458,439 total  |  277,458,439 trainable
+
+#cell 03
+
+Effective batch : 32
+Steps per epoch : ~630
+Total steps     : ~3150
+Warmup steps    : 315
+Mixed precision : True
+
+# cell 04
+
+ Class weights:
+  O        0.163
+  B-DIS    10.272
+  I-DIS    5.269
+  B-SYM    9.424
+  I-SYM    4.436
+  B-PRO    10.374
+  I-PRO    6.715
+
+Starting training ...
+
+    
+      
+      
+      [3155/3155 31:35, Epoch 5/5]
+    
+    
+  
+ 
+      Epoch
+      Training Loss
+      Validation Loss
+      Precision
+      Recall
+      Overall F1
+    
+  
+  
+    
+      1
+      0.687260
+      0.656577
+      0.136002
+      0.617057
+      0.222880
+    
+    
+      2
+      0.572495
+      0.606586
+      0.145340
+      0.651501
+      0.237662
+    
+    
+      3
+      0.492200
+      0.629752
+      0.153655
+      0.670289
+      0.250000
+    
+    
+      4
+      0.449932
+      0.623382
+      0.169279
+      0.700313
+      0.272652
+    
+    
+      5
+      0.397774
+      0.628550
+      0.170823
+      0.696445
+      0.274353
+    
+# cell 05
+
+ Saved: /content/MultiClinNER-XLMR/outputs/results/training_curves.png
+
+Best dev F1 : 0.2744  (epoch 5)
+
+# cell 06
+
+ === Dev set results (EN) ===
+              precision    recall  f1-score   support
+
+         DIS       0.20      0.69      0.30      1997
+         PRO       0.15      0.73      0.25      1588
+         SYM       0.17      0.68      0.27      1844
+
+   micro avg       0.17      0.70      0.27      5429
+   macro avg       0.17      0.70      0.27      5429
+weighted avg       0.17      0.70      0.28      5429
+
+
+# cell 07
+Running inference on EN test set ...
+
+=== English Test Results ===
+              precision    recall  f1-score   support
+
+         DIS       0.22      0.67      0.33      2204
+         PRO       0.15      0.72      0.25      1620
+         SYM       0.15      0.66      0.25      1789
+
+   micro avg       0.17      0.68      0.28      5613
+   macro avg       0.17      0.69      0.28      5613
+weighted avg       0.18      0.68      0.28      5613
+
+
+Overall entity F1 (EN): 0.2761
+Entity	Precision	Recall	F1	Support
+0	DIS	0.2155	0.6733	0.3265	2204
+1	SYM	0.1532	0.6635	0.2490	1789
+2	PRO	0.1544	0.7216	0.2544	1620
+
+
+# cell 08
+
+Running inference on ES test set ...
+
+=== Spanish Test Results ===
+              precision    recall  f1-score   support
+
+         DIS       0.20      0.69      0.31      1837
+         PRO       0.20      0.74      0.31      1872
+         SYM       0.15      0.66      0.25      1655
+
+   micro avg       0.18      0.70      0.29      5364
+   macro avg       0.18      0.70      0.29      5364
+weighted avg       0.18      0.70      0.29      5364
+
+
+Overall entity F1 (ES): 0.2892
+Entity	Precision	Recall	F1	Support
+0	DIS	0.2010	0.6908	0.3114	1837
+1	SYM	0.1527	0.6634	0.2483	1655
+2	PRO	0.1956	0.7393	0.3094	1872
+
+# cell 09
+
+Model comparison table (mBERT rows require separate training run):
+Model	Language	DIS F1	SYM F1	PRO F1	Overall F1
+0	mBERT	EN	—	—	—	— (run mBERT baseline)
+1	mBERT	ES	—	—	—	— (run mBERT baseline)
+2	XLM-R (joint)	EN	0.3265	0.249	0.2544	0.2761
+3	XLM-R (joint)	ES	0.3114	0.2483	0.3094	0.2892
+
+# cell 10
+
+Error counts by category:
+Error Type	EN Count	ES Count
+0	False Positive	43011	42534
+1	False Negative	529	362
+2	Type Confusion	2381	1995
+
+# cell 11
+
+Error rates (normalised by entity token count):
+Error Type	EN Rate	ES Rate
+0	False Positive	2.6860	2.7135
+1	False Negative	0.0330	0.0231
+2	Type Confusion	0.1487	0.1273
